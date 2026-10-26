@@ -311,3 +311,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* 404 */
 .not-found { min-height: 100svh; display: grid; align-items: center; padding: 3rem 0; }
+
+/* Experience footnote */
+.beyond { margin: 3rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); }
+.beyond .mono { display: block; margin-bottom: .3rem; color: var(--accent-2); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
