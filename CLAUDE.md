@@ -26,7 +26,7 @@ Headless Chrome is available at `/Applications/Google Chrome.app/Contents/MacOS/
 - Images live in `images/` (optimised JPEGs, favicons in `images/favicon/`). Keep file extensions matching the real format.
 - Fonts are self-hosted in `fonts/` (variable Space Grotesk and JetBrains Mono, latin subset) and declared at the top of `css/styles.css`. There are no third-party requests.
 - Every page carries canonical, Open Graph and Twitter tags pointing at `https://massmontagna.com`; `index.html` also has Person JSON-LD. A new page needs its own tags and an entry in `sitemap.xml`.
-- `images/og-image.png` (1200x630) is the social preview. It was rendered from a throwaway HTML page with headless Chrome; regenerate it the same way if the name, title or photo changes.
+- `images/og-image.png` (1200x630) is the social preview. It was rendered from a throwaway HTML page with headless Chrome; regenerate it the same way if the name or title changes.
 - `404.html` uses root-relative paths because GitHub Pages serves it from any URL depth.
 - Text on gradient surfaces uses `--on-accent` (dark in the dark theme, white in the light theme) to keep contrast above WCAG AA.
 
