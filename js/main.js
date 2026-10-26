@@ -88,6 +88,106 @@
 		});
 	});
 
+	/* Hero card: yaw rate gain chart (same formula as the code shown beside it) */
+	var chartCanvas = document.getElementById('yaw-chart');
+	if (chartCanvas && chartCanvas.getContext) initYawChart(chartCanvas);
+
+	function initYawChart(cv) {
+		var cx = cv.getContext('2d');
+		var L = 2.8, vMax = 50, yMax = 6;
+		var curves = [{ k: 0.003, c: '--accent-2', a: 0.65 }, { k: 0.005, c: '--accent', a: 1 }, { k: 0.008, c: '--chart-3', a: 0.75 }];
+		var pad = { l: 34, r: 56, t: 22, b: 26 };
+		var W, H, dpr, running = false, start = 0, visible = true;
+		var gain = function (v, k) { return v / (L + k * v * v); };
+		var vch = Math.sqrt(L / curves[1].k);
+		var ease = function (x) { return 1 - Math.pow(1 - x, 3); };
+
+		function size() {
+			var r = cv.getBoundingClientRect();
+			dpr = Math.min(window.devicePixelRatio || 1, 2);
+			W = r.width; H = r.height;
+			cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+			cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+		}
+		function css(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+		function px(v) { return pad.l + (v / vMax) * (W - pad.l - pad.r); }
+		function py(g) { return H - pad.b - (g / yMax) * (H - pad.t - pad.b); }
+
+		function draw(t) {
+			var dim = css('--text-dim'), border = css('--border');
+			cx.clearRect(0, 0, W, H);
+			cx.font = '10px ' + css('--font-mono');
+			cx.lineWidth = 1;
+
+			// grid + ticks
+			cx.fillStyle = dim; cx.strokeStyle = border;
+			cx.textAlign = 'center'; cx.textBaseline = 'top';
+			for (var x = 0; x <= vMax; x += 10) {
+				cx.beginPath(); cx.moveTo(px(x), pad.t); cx.lineTo(px(x), H - pad.b); cx.stroke();
+				cx.fillText(x, px(x), H - pad.b + 6);
+			}
+			cx.textAlign = 'right'; cx.textBaseline = 'middle';
+			for (var y = 0; y <= yMax; y += 2) {
+				cx.beginPath(); cx.moveTo(pad.l, py(y)); cx.lineTo(W - pad.r, py(y)); cx.stroke();
+				cx.fillText(y, pad.l - 6, py(y));
+			}
+			cx.textAlign = 'left'; cx.textBaseline = 'top';
+			cx.fillText(W < 400 ? 'gain (1/s)' : 'yaw rate gain (1/s)', pad.l, 4);
+			cx.textAlign = 'left';
+			cx.fillText('m/s', px(vMax) + 14, H - pad.b + 6);
+
+			// curves draw in one after another
+			curves.forEach(function (cv_, i) {
+				var p = Math.min(Math.max((t - i * 0.35) / 1.4, 0), 1);
+				if (p <= 0) return;
+				var vEnd = vMax * ease(p), color = css(cv_.c);
+				cx.beginPath();
+				for (var v = 0; v <= vEnd; v += 0.5) {
+					var X = px(v), Y = py(gain(v, cv_.k));
+					if (v === 0) cx.moveTo(X, Y); else cx.lineTo(X, Y);
+				}
+				cx.globalAlpha = cv_.a; cx.strokeStyle = color; cx.lineWidth = i === 1 ? 2.2 : 1.6; cx.stroke();
+				if (p >= 1) {
+					cx.fillStyle = color; cx.textAlign = 'left'; cx.textBaseline = 'middle';
+					cx.fillText('k=' + cv_.k, px(vMax) + 5, py(gain(vMax, cv_.k)));
+				}
+				cx.globalAlpha = 1;
+			});
+
+			// marker sweeping along the middle curve
+			if (t > 2.4) {
+				var u = reduceMotion ? vch / vMax : 0.5 + 0.5 * Math.sin((t - 2.4) * 0.55 - 1.2);
+				var mv = 2 + u * (vMax - 4), mg = gain(mv, curves[1].k), mx = px(mv), my = py(mg);
+				var accent = css('--accent-2');
+				cx.strokeStyle = accent; cx.globalAlpha = 0.35; cx.setLineDash([3, 3]);
+				cx.beginPath(); cx.moveTo(mx, my); cx.lineTo(mx, H - pad.b); cx.stroke();
+				cx.setLineDash([]); cx.globalAlpha = 1;
+				cx.fillStyle = accent; cx.beginPath(); cx.arc(mx, my, 3.5, 0, Math.PI * 2); cx.fill();
+				cx.globalAlpha = 0.25; cx.beginPath(); cx.arc(mx, my, 8, 0, Math.PI * 2); cx.fill(); cx.globalAlpha = 1;
+				cx.fillStyle = css('--text'); cx.textAlign = 'right'; cx.textBaseline = 'top';
+				cx.fillText('v=' + mv.toFixed(1) + ' m/s' + (W < 400 ? '' : '   gain=' + mg.toFixed(2)), W - pad.r + 22, 4);
+			}
+		}
+
+		function frame(now) {
+			if (!running) return;
+			draw((now - start) / 1000);
+			requestAnimationFrame(frame);
+		}
+		function setRunning(v) {
+			if (v && !running) { running = true; if (!start) start = performance.now(); requestAnimationFrame(frame); }
+			else if (!v) running = false;
+		}
+
+		size();
+		if (window.ResizeObserver) new ResizeObserver(function () { size(); if (!running) draw(10); }).observe(cv);
+		if (reduceMotion) { draw(10); return; }
+		if ('IntersectionObserver' in window) {
+			new IntersectionObserver(function (e) { visible = e[0].isIntersecting; setRunning(visible && !document.hidden); }).observe(cv);
+		} else { setRunning(true); }
+		document.addEventListener('visibilitychange', function () { setRunning(visible && !document.hidden); });
+	}
+
 	/* Hero: animated telemetry traces */
 	var canvas = document.getElementById('trace-canvas');
 	if (!canvas || !canvas.getContext) return;

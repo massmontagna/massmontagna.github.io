@@ -72,6 +72,22 @@
 						<a href="#contact" class="btn btn--ghost">Get in touch</a>
 					</div>
 				</div>
+				<div class="devcard reveal" role="img" aria-label="Python code for a simple vehicle yaw rate model, with a chart of yaw rate gain against speed for three understeer gradients">
+					<div class="devcard__bar" aria-hidden="true">
+						<span class="devcard__dots"><i></i><i></i><i></i></span>
+						<span class="devcard__file mono">yaw_rate_model.py</span>
+					</div>
+					<pre class="devcard__code mono" aria-hidden="true"><code><span class="tk">import</span> numpy <span class="tk">as</span> np
+
+<span class="tk">def</span> <span class="tf">yaw_rate_gain</span>(v, L=<span class="tn">2.8</span>, k_us=<span class="tn">0.005</span>):
+    <span class="tc">"""Steady-state yaw rate per rad of steer."""</span>
+    <span class="tk">return</span> v / (L + k_us * v**<span class="tn">2</span>)
+
+v = np.linspace(<span class="tn">0</span>, <span class="tn">50</span>, <span class="tn">100</span>)  <span class="tc"># speed, m/s</span>
+<span class="tk">for</span> k <span class="tk">in</span> (<span class="tn">0.003</span>, <span class="tn">0.005</span>, <span class="tn">0.008</span>):
+    gain = yaw_rate_gain(v, k_us=k)</code></pre>
+					<div class="devcard__plot" aria-hidden="true"><canvas id="yaw-chart"></canvas></div>
+				</div>
 			</div>
 			<a href="#skills" class="scroll-hint mono" aria-label="Scroll to skills">scroll</a>
 		</section>
