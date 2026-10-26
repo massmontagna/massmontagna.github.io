@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Image File Conversion Tool – Massimo Montagna</title>
+	<meta name="description" content="A Python tool with a native file picker that converts images between JPEG, PNG, HEIC and other formats on macOS and Windows.">
+	<meta name="theme-color" content="#070b14">
+	<link rel="canonical" href="https://massmontagna.com/projects/image-converter.html">
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="Massimo Montagna">
+	<meta property="og:title" content="Image File Conversion Tool – Massimo Montagna">
+	<meta property="og:description" content="A Python tool with a native file picker that converts images between JPEG, PNG, HEIC and other formats on macOS and Windows.">
+	<meta property="og:url" content="https://massmontagna.com/projects/image-converter.html">
+	<meta property="og:image" content="https://massmontagna.com/images/og-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Image File Conversion Tool – Massimo Montagna">
+	<meta name="twitter:description" content="A Python tool with a native file picker that converts images between JPEG, PNG, HEIC and other formats on macOS and Windows.">
+	<meta name="twitter:image" content="https://massmontagna.com/images/og-image.png">
+	<link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+	<link rel="icon" type="image/png" sizes="32x32" href="../images/favicon/favicon-32x32.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../images/favicon/apple-touch-icon.png">
+	<link rel="manifest" href="../images/favicon/site.webmanifest">
+	<link rel="preload" href="../fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="../fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="../css/styles.css">
+	<script>
+		document.documentElement.classList.add('js');
+		try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+	</script>
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header class="site-header" id="site-header">
+		<nav class="nav" aria-label="Main">
+			<a href="../index.html" class="nav__logo"><span class="nav__logo-mark">MM</span><span class="nav__logo-text">Massimo Montagna</span></a>
+			<button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+				<span></span><span></span>
+			</button>
+			<ul class="nav__links" id="nav-links">
+				<li><a href="../index.html#skills">Skills</a></li>
+				<li><a href="../index.html#projects" class="is-active">Projects</a></li>
+				<li><a href="../index.html#experience">Experience</a></li>
+				<li><a href="../index.html#contact">Contact</a></li>
+				<li>
+					<button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+						<svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+						<svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+					</button>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="main">
+		<section class="page-hero" id="top">
+			<div class="container container--narrow">
+				<a class="back-link mono reveal" href="../index.html#projects">← All projects</a>
+				<div class="reveal"><ul class="tags"><li>Python</li><li>Pillow</li><li>GUI</li><li>Cross-platform</li></ul></div>
+				<h1 class="page-hero__title reveal">Image File Conversion Tool</h1>
+				<p class="page-hero__lead reveal">A small Python tool that converts images from one format to another using your system's native file picker, on both macOS and Windows.</p>
+				<div class="hero__actions reveal">
+					<a class="btn btn--primary" href="https://github.com/massmontagna/Image-Converter" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">→</span></a>
+				</div>
+			</div>
+		</section>
+
+		<div class="container container--narrow">
+			<figure class="cover reveal">
+				<img src="../images/project-converter.jpg" alt="Image conversion tool icon" width="1200" height="800">
+			</figure>
+			<dl class="meta reveal"><div><dt class="mono">Type</dt><dd>Personal project</dd></div><div><dt class="mono">Language</dt><dd>Python 3.7+</dd></div><div><dt class="mono">Platforms</dt><dd>macOS, Windows</dd></div><div><dt class="mono">License</dt><dd>MIT</dd></div></dl>
+		</div>
+
+		<section class="section section--tight">
+			<div class="container container--narrow prose">
+				<p class="section__label mono reveal">01 / overview</p>
+				<h2 class="reveal">Convert images without leaving your desktop</h2>
+				<div class="reveal"><p>Converting a handful of images shouldn't need an online upload or a heavyweight editor. This tool opens the familiar Finder or File Explorer picker, lets you choose one or more images, and writes them out in the format you ask for.</p><p>It is built on Pillow, with <code>pillow-heif</code> adding support for HEIC photos from iPhones.</p></div>
+			</div>
+		</section>
+
+		<section class="section section--tight">
+			<div class="container container--narrow">
+				<p class="section__label mono reveal">02 / how it works</p>
+				<h2 class="prose-h2 reveal">Pick, choose a format, done</h2>
+				<ol class="steps"><li class="step reveal"><span class="step__num mono">01</span><div><h3>Select images</h3><p>A native file picker opens so you can choose one or more images.</p></div></li><li class="step reveal"><span class="step__num mono">02</span><div><h3>Choose a format</h3><p>Type the output format. Supported types are JPEG, PNG, BMP, TIFF, WEBP, HEIC and GIF.</p></div></li><li class="step reveal"><span class="step__num mono">03</span><div><h3>Convert</h3><p>Each image is converted and saved next to the original, with the correct file extension added automatically.</p></div></li></ol>
+			</div>
+		</section>
+
+		<section class="section section--tight">
+			<div class="container container--narrow prose">
+				<p class="section__label mono reveal">03 / features</p>
+				<h2 class="reveal">What it does</h2>
+				<ul class="checklist reveal"><li>Native file picker on macOS and Windows</li><li>Batch conversion of multiple images at once</li><li>Supports JPEG, PNG, BMP, TIFF, WEBP, HEIC and GIF</li><li>Output saved alongside the originals</li><li>Exits with a clear error message if an unsupported format is entered</li></ul>
+				<!--
+					TODO (owner): add screenshots or results here. Example:
+					<figure class="shot"><img src="../images/your-screenshot.jpg" alt="..." loading="lazy"><figcaption>Caption</figcaption></figure>
+				-->
+			</div>
+		</section>
+
+		<section class="section section--tight">
+			<div class="container container--narrow prose">
+				<p class="section__label mono reveal">04 / run it</p>
+				<h2 class="reveal">Try it yourself</h2>
+				<div class="reveal"><p>You need Python 3.7 or later. Install the dependencies (Pillow and pillow-heif) and run the script.</p></div>
+				<pre class="code reveal"><code>git clone https://github.com/massmontagna/Image-Converter
+cd Image-Converter
+pip install -r requirements.txt
+
+python image_converter_tool.py</code></pre>
+			</div>
+		</section>
+
+		<section class="section section--tight">
+			<div class="container container--narrow">
+				<nav class="pager reveal" aria-label="More projects"><a class="pager__link pager__link--next" href="f1-grand-prix-predictions.html"><span class="mono">next project →</span>Formula 1 Grand Prix Predictions</a></nav>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container site-footer__inner">
+			<p>&copy; <span id="year">2026</span> Massimo Montagna. All rights reserved.</p>
+			<a href="#top" class="mono">back to top ↑</a>
+		</div>
+	</footer>
+
+	<script src="../js/main.js"></script>
+</body>
+</html>
