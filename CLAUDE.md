@@ -21,10 +21,15 @@ Work happens on the `portfolio-v2` branch; `main` is what is published. The site
 
 Headless Chrome is available at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` (`--headless=new --screenshot=...`). Caveats: its minimum window width is about 500px, so test mobile by loading the page in a narrow `<iframe>`; and below-the-fold content stays hidden until scrolled, so use a temporary copy that forces `.reveal` visible. Delete any such temp files afterwards.
 
-## Assets
+## Assets and SEO
 
-Images live in `images/` (optimised JPEGs, favicons in `images/favicon/`). Keep file extensions matching the real format.
+- Images live in `images/` (optimised JPEGs, favicons in `images/favicon/`). Keep file extensions matching the real format.
+- Fonts are self-hosted in `fonts/` (variable Space Grotesk and JetBrains Mono, latin subset) and declared at the top of `css/styles.css`. There are no third-party requests.
+- Every page carries canonical, Open Graph and Twitter tags pointing at `https://massmontagna.com`; `index.html` also has Person JSON-LD. A new page needs its own tags and an entry in `sitemap.xml`.
+- `images/og-image.png` (1200x630) is the social preview. It was rendered from a throwaway HTML page with headless Chrome; regenerate it the same way if the name, title or photo changes.
+- `404.html` uses root-relative paths because GitHub Pages serves it from any URL depth.
+- Text on gradient surfaces uses `--on-accent` (dark in the dark theme, white in the light theme) to keep contrast above WCAG AA.
 
-## Planned next
+## Remaining
 
-Phase 4 adds SEO/Open Graph tags, a sitemap, and self-hosted fonts (currently loaded from Google Fonts).
+A Lighthouse run against the deployed site, and optionally project screenshots/results and real experience entries.
