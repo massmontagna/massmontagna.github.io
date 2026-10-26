@@ -1,6 +1,6 @@
 # Massimo Montagna – Portfolio
 
-Personal portfolio site for Massimo Montagna, a vehicle dynamics engineer and aspiring software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
+Personal portfolio site for Massimo Montagna, a mechanical engineer and software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
 
 A dark, blue-accented single-page site with an animated telemetry-style hero, a skills grid, featured projects with case-study pages, an experience timeline and contact links. It has a light/dark theme toggle and is fully responsive.
 
