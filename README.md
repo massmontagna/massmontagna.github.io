@@ -1,6 +1,6 @@
 # Massimo Montagna – Portfolio
 
-Personal portfolio site for Massimo Montagna, a vehicle dynamics engineer and software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
+Personal portfolio site for Massimo Montagna, a vehicle dynamics engineer and aspiring software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
 
 A dark, blue-accented single-page site with an animated telemetry-style hero, a skills grid, featured projects with case-study pages, an experience timeline and contact links. It has a light/dark theme toggle and is fully responsive.
 
@@ -24,7 +24,7 @@ projects/               Case-study page for each project
 css/styles.css          All styles; colours and fonts are CSS variables in :root
 js/main.js              Theme toggle, nav, scroll effects, hero canvas animation
 fonts/                  Self-hosted Space Grotesk and JetBrains Mono (woff2)
-images/                 Photos, favicons (images/favicon/) and the social preview image
+images/                 Project images, favicons (images/favicon/) and the social preview image
 404.html                Not-found page
 sitemap.xml, robots.txt Search engine files
 CNAME                   Custom domain for GitHub Pages
@@ -32,10 +32,10 @@ CNAME                   Custom domain for GitHub Pages
 
 ## Editing content
 
-- **Experience:** replace the placeholder entries in the `#experience` section of `index.html`. Copy a `timeline__item` block to add more.
+- **Experience:** edit the `#experience` section of `index.html`. Copy a `timeline__item` block to add an entry.
 - **Add a project:** duplicate a file in `projects/`, update the text, add a card in the `#projects` section of `index.html`, and add the page to `sitemap.xml`.
 - **Accent colour:** change `--accent`, `--accent-2` and `--accent-glow` in `css/styles.css`.
-- **Social preview:** `images/og-image.png` is a 1200×630 image used by link previews. Regenerate it if the name, title or photo changes.
+- **Social preview:** `images/og-image.png` is a 1200×630 image used by link previews. Regenerate it if the name or title changes.
 
 ## Deployment
 

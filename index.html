@@ -4,22 +4,23 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Massimo Montagna – Vehicle Dynamics Engineer &amp; Software Developer</title>
-	<meta name="description" content="Portfolio of Massimo Montagna, a vehicle dynamics engineer and software developer building Python models and tools for full vehicle simulation.">
+	<meta name="description" content="Portfolio of Massimo Montagna, a Lead Vehicle Dynamics Analyst at a large automotive OEM and aspiring software developer building Python and MATLAB models and tools for vehicle simulation.">
 	<meta name="theme-color" content="#070b14">
 	<link rel="canonical" href="https://massmontagna.com/">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Massimo Montagna">
-	<meta property="og:title" content="Massimo Montagna – Vehicle Dynamics Engineer &amp; Software Developer">
-	<meta property="og:description" content="Portfolio of Massimo Montagna, a vehicle dynamics engineer and software developer building Python models and tools for full vehicle simulation.">
+	<meta property="og:title" content="Massimo Montagna – Vehicle Dynamics Engineer &amp; Aspiring Software Developer">
+	<meta property="og:description" content="Portfolio of Massimo Montagna, a Lead Vehicle Dynamics Analyst at a large automotive OEM and aspiring software developer building Python and MATLAB models and tools for vehicle simulation.">
 	<meta property="og:url" content="https://massmontagna.com/">
 	<meta property="og:image" content="https://massmontagna.com/images/og-image.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Massimo Montagna – Vehicle Dynamics Engineer &amp; Software Developer">
-	<meta name="twitter:description" content="Portfolio of Massimo Montagna, a vehicle dynamics engineer and software developer building Python models and tools for full vehicle simulation.">
+	<meta name="twitter:title" content="Massimo Montagna – Vehicle Dynamics Engineer &amp; Aspiring Software Developer">
+	<meta name="twitter:description" content="Portfolio of Massimo Montagna, a Lead Vehicle Dynamics Analyst at a large automotive OEM and aspiring software developer building Python and MATLAB models and tools for vehicle simulation.">
 	<meta name="twitter:image" content="https://massmontagna.com/images/og-image.png">
-	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Massimo Montagna", "url": "https://massmontagna.com/", "image": "https://massmontagna.com/images/profile.jpg", "jobTitle": "Vehicle Dynamics Engineer and Software Developer", "sameAs": ["https://github.com/massmontagna", "https://linkedin.com/in/mcmontagna"]}</script>
+	<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Massimo Montagna", "url": "https://massmontagna.com/", "jobTitle": "Lead Vehicle Dynamics Analyst", "sameAs": ["https://github.com/massmontagna", "https://linkedin.com/in/mcmontagna"], "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Sussex"}}</script>
+	<link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
 	<link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
@@ -37,7 +38,7 @@
 
 	<header class="site-header" id="site-header">
 		<nav class="nav" aria-label="Main">
-			<a href="#top" class="nav__logo"><span class="nav__logo-mark">MM</span><span class="nav__logo-text">Massimo Montagna</span></a>
+			<a href="#top" class="nav__logo"><img class="nav__logo-mark" src="images/favicon/favicon.svg" alt="" width="36" height="36"><span class="nav__logo-text">Massimo Montagna</span></a>
 			<button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
 				<span></span><span></span>
 			</button>
@@ -62,19 +63,30 @@
 			<canvas class="hero__canvas" id="trace-canvas" aria-hidden="true"></canvas>
 			<div class="container hero__inner">
 				<div class="hero__text">
-					<p class="eyebrow reveal"><span class="eyebrow__dot"></span>Available for new opportunities</p>
+					<p class="eyebrow reveal"><span class="eyebrow__dot"></span>Currently building new projects</p>
 					<h1 class="hero__title reveal">Massimo<br><span class="gradient-text">Montagna</span></h1>
-					<p class="hero__role reveal">Vehicle Dynamics Engineer <span class="sep">/</span> Software Developer</p>
-					<p class="hero__bio reveal">I build full vehicle models and simulation tools in Python, turning complex data into clear answers and automating the tedious parts of engineering.</p>
+					<p class="hero__role reveal">Mechanical Engineer <span class="sep">/</span> Software Developer</p>
+					<p class="hero__bio reveal">I automate the boring parts of engineering.<br>Experienced in engineering luxury vehicles.<br>Always learning, always building.</p>
 					<div class="hero__actions reveal">
 						<a href="#projects" class="btn btn--primary">View my projects</a>
 						<a href="#contact" class="btn btn--ghost">Get in touch</a>
 					</div>
 				</div>
-				<div class="hero__portrait reveal">
-					<div class="portrait">
-						<img src="images/profile.jpg" alt="Portrait of Massimo Montagna" width="800" height="800">
+				<div class="devcard reveal" role="img" aria-label="Python code for a simple vehicle yaw rate model, with a chart of yaw rate gain against speed for three understeer gradients">
+					<div class="devcard__bar" aria-hidden="true">
+						<span class="devcard__dots"><i></i><i></i><i></i></span>
+						<span class="devcard__file mono">yaw_rate_model.py</span>
 					</div>
+					<pre class="devcard__code mono" aria-hidden="true"><code><span class="tk">import</span> numpy <span class="tk">as</span> np
+
+<span class="tk">def</span> <span class="tf">yaw_rate_gain</span>(v, L=<span class="tn">2.8</span>, k_us=<span class="tn">0.005</span>):
+    <span class="tc">"""Steady-state yaw rate per rad of steer."""</span>
+    <span class="tk">return</span> v / (L + k_us * v**<span class="tn">2</span>)
+
+v = np.linspace(<span class="tn">0</span>, <span class="tn">50</span>, <span class="tn">100</span>)  <span class="tc"># speed, m/s</span>
+<span class="tk">for</span> k <span class="tk">in</span> (<span class="tn">0.003</span>, <span class="tn">0.005</span>, <span class="tn">0.008</span>):
+    gain = yaw_rate_gain(v, k_us=k)</code></pre>
+					<div class="devcard__plot" aria-hidden="true"><canvas id="yaw-chart"></canvas></div>
 				</div>
 			</div>
 			<a href="#skills" class="scroll-hint mono" aria-label="Scroll to skills">scroll</a>
@@ -91,14 +103,14 @@
 					<article class="card card--glow reveal">
 						<div class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div>
 						<h3>Programming</h3>
-						<p>Proficient in MATLAB and Python, using automated tools to solve complex engineering problems.</p>
+						<p>Proficient in MATLAB and Python. Experienced with simulation post-processing and automation of editing and processing text-based vehicle models. Certified in Beginner Python and Practical Artificial Intelligence (Level 4).</p>
 						<ul class="tags"><li>Python</li><li>MATLAB</li></ul>
 					</article>
 					<article class="card card--glow reveal">
 						<div class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="9"/></svg></div>
 						<h3>Vehicle dynamics &amp; modelling</h3>
-						<p>Full vehicle modelling and simulation, including tyre modelling and multibody and vehicle dynamics software.</p>
-						<ul class="tags"><li>SIMPACK</li><li>IPG CarMaker</li><li>Tyre modelling</li></ul>
+						<p>High-fidelity vehicle models simulated across vehicle dynamics test cases, using parametric models, multibody simulation and advanced data analysis to engineer luxury vehicle attributes.</p>
+						<ul class="tags"><li>Multibody simulation</li><li>SIMPACK</li><li>IPG CarMaker</li><li>Tyre modelling</li></ul>
 					</article>
 					<article class="card card--glow reveal">
 						<div class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M18 11.5c0 4-6 3-11.2 5"/></svg></div>
@@ -112,7 +124,19 @@
 						<p>Data-driven approaches to hard problems, with a particular interest in using AI to automate tasks.</p>
 						<ul class="tags"><li>Data analysis</li><li>Machine learning</li><li>Automation</li></ul>
 					</article>
-				</div>
+									<article class="card card--glow reveal">
+						<div class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18M3 12h18M3 19h18"/><path d="M8 3v4M16 10v4M11 17v4"/></svg></div>
+						<h3>Agile &amp; collaboration</h3>
+						<p>Agile project management including sprint planning and documentation, working in cross-functional teams to make design and development decisions from simulated and physical test data.</p>
+						<ul class="tags"><li>Agile</li><li>Jira</li><li>Confluence</li></ul>
+					</article>
+					<article class="card card--glow reveal">
+						<div class="card__icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.5 6 5.500"/></svg></div>
+						<h3>Leadership &amp; teamwork</h3>
+						<p>Led a team of twelve engineers designing and validating components for a first-generation electric Formula Student car, and led an early-phase vehicle development project at a large automotive OEM.</p>
+						<ul class="tags"><li>Leadership</li><li>Teamwork</li><li>Critical thinking</li></ul>
+					</article>
+</div>
 			</div>
 		</section>
 
@@ -132,7 +156,7 @@
 							<ul class="tags"><li>Python</li><li>fastF1</li><li>Machine learning</li></ul>
 							<h3>Formula 1 Grand Prix Predictions</h3>
 							<p>Using the fastF1 API, a tool that combines data analysis and machine learning to predict the results of Formula 1 Grands Prix.</p>
-							<div class="project__links"><a class="link-arrow" href="projects/f1-grand-prix-predictions.html">Read case study <span aria-hidden="true">→</span></a><a class="link-plain" href="https://github.com/massmontagna/GrandPrix-Predictions" target="_blank" rel="noopener">GitHub</a></div>
+							<div class="project__links"><a class="link-arrow" href="projects/f1-grand-prix-predictions.html">Read more <span aria-hidden="true">→</span></a><a class="link-plain" href="https://github.com/massmontagna/GrandPrix-Predictions" target="_blank" rel="noopener">GitHub</a></div>
 						</div>
 					</article>
 					<article class="project card--glow reveal">
@@ -143,7 +167,7 @@
 							<ul class="tags"><li>Python</li><li>GUI</li><li>Cross-platform</li></ul>
 							<h3>Image File Conversion Tool</h3>
 							<p>A Python app that converts images between file types on Mac or Windows through a simple GUI.</p>
-							<div class="project__links"><a class="link-arrow" href="projects/image-converter.html">Read case study <span aria-hidden="true">→</span></a><a class="link-plain" href="https://github.com/massmontagna/Image-Converter" target="_blank" rel="noopener">GitHub</a></div>
+							<div class="project__links"><a class="link-arrow" href="projects/image-converter.html">Read more <span aria-hidden="true">→</span></a><a class="link-plain" href="https://github.com/massmontagna/Image-Converter" target="_blank" rel="noopener">GitHub</a></div>
 						</div>
 					</article>
 				</div>
@@ -157,35 +181,36 @@
 					<p class="section__label mono">03 / experience</p>
 					<h2 class="section__title">Experience</h2>
 				</header>
-				<!-- PLACEHOLDER CONTENT: replace each entry below with real roles and education. Copy an <li> to add more. -->
 				<ol class="timeline">
 					<li class="timeline__item reveal">
-						<p class="timeline__date mono">2024 – Present</p>
-						<h3>Vehicle Dynamics Engineer</h3>
-						<p class="timeline__org">Company Name · Location</p>
+						<p class="timeline__date mono">Oct 2022 – Present</p>
+						<h3>Lead Vehicle Dynamics Analyst</h3>
+						<p class="timeline__org">JLR · UK</p>
 						<ul>
-							<li>Built full vehicle models and simulation workflows to evaluate ride and handling performance.</li>
-							<li>Developed Python tools to automate data processing and reporting.</li>
+							<li>Lead vehicle dynamics analysis for early-phase vehicle development, setting performance targets and validating them against physical test data.</li>
+							<li>Build high-fidelity simulation models and automation tools, and work with cross-functional teams in an Agile environment.</li>
 						</ul>
 					</li>
 					<li class="timeline__item reveal">
-						<p class="timeline__date mono">2022 – 2024</p>
-						<h3>Graduate Engineer</h3>
-						<p class="timeline__org">Company Name · Location</p>
+						<p class="timeline__date mono">Dec 2021 – Jun 2022</p>
+						<h3>Academic Tutor</h3>
+						<p class="timeline__org">University of Sussex · Brighton, UK</p>
 						<ul>
-							<li>Supported vehicle testing and correlated simulation results with measured data.</li>
-							<li>Contributed to tyre model parameterisation and validation.</li>
+							<li>Tutoring first-year mechancial engineering students.</li>
 						</ul>
 					</li>
 					<li class="timeline__item reveal">
-						<p class="timeline__date mono">2018 – 2022</p>
-						<h3>BEng/MEng Engineering</h3>
-						<p class="timeline__org">University Name · Location</p>
+						<p class="timeline__date mono">Sep 2018 – Jul 2022</p>
+						<h3>Mechanical Engineering Student</h3>
+						<p class="timeline__org">University of Sussex · Brighton, UK</p>
 						<ul>
-							<li>Degree focused on mechanical engineering and vehicle systems.</li>
+							<li>First-Class MEng degree in Mechanical Engineering.</li>
+							<li>Masters Thesis: Formula Student Chassis Design</li>
+							<li>Formula Student: Led the Mechanical Systems sub-team of twelve engineers designing and validating components for an electric Formula Student car.</li>
 						</ul>
 					</li>
 				</ol>
+				<p class="beyond reveal"><span class="mono">Beyond work</span> Motorsport and automotive technology, CAD and 3D printing, and learning Italian.</p>
 			</div>
 		</section>
 
