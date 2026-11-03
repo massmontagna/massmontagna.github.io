@@ -15,7 +15,8 @@ Work happens on feature branches (e.g. `portfolio-v2.1`); `main` is what is publ
 - `js/main.js` is one IIFE: theme toggle (saved in `localStorage`, applied early by an inline script in `<head>`), mobile nav, hide-on-scroll header, scroll reveal, cursor-glow on `.card--glow`, the animated telemetry canvas behind the hero (reads `--trace-rgb` from CSS so it follows the theme), and `initYawChart` for the chart in the hero card.
 - The hero's right-hand `.devcard` shows a Python snippet plus a canvas chart. The chart computes the same formula as the snippet (yaw rate gain `v / (L + k_us * v**2)` for three `k_us` values), so if you change the code text, change `gain`, `curves` and `L` in `initYawChart` to match.
 - The `.reveal` class fades elements in via IntersectionObserver. It only hides elements when the `js` class is on `<html>` (set by the inline head script), so the page still works without JS.
-- `projects/*.html` are the case-study pages (one per project). They are hand-edited copies of the same layout: duplicate one to add a project, using `../` paths for CSS/JS/images, and link it from the cards in `#projects` on `index.html` plus the "next project" link at the bottom. Each has an HTML comment marking where to add screenshots/results.
+- `#projects` holds a single text-only card for the current project (Engineer's Notebook, linking to `https://engineersnotebook.net`). There are no case-study pages or project images; projects link straight to their own sites.
+
 ## Content decisions (owner's preferences, keep these)
 
 - Experience in `index.html` is a high-level overview drawn from the owner's CV. Do not re-add detailed bullets.
@@ -40,4 +41,4 @@ Headless Chrome is available at `/Applications/Google Chrome.app/Contents/MacOS/
 
 ## Remaining
 
-A Lighthouse run against the deployed site (run it from Chrome DevTools; `npx lighthouse` was blocked by the permission classifier), and optionally project screenshots/results.
+A Lighthouse run against the deployed site (run it from Chrome DevTools; `npx lighthouse` was blocked by the permission classifier), and nothing else outstanding.
