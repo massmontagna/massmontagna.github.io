@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00Z",
+  "title": "Design System: Massimo Montagna",
+  "extensions": {
+    "colorMeta": {
+      "ink-blue": {
+        "role": "primary",
+        "displayName": "Ink Blue",
+        "canonical": "#1d4ed8",
+        "tonalRamp": [
+          "oklch(15% 0.067 264)",
+          "oklch(25% 0.1 264)",
+          "oklch(35% 0.133 264)",
+          "oklch(45% 0.167 264)",
+          "oklch(55% 0.2 264)",
+          "oklch(70% 0.15 264)",
+          "oklch(85% 0.1 264)",
+          "oklch(95% 0.067 264)"
+        ]
+      },
+      "ink-blue-deep": {
+        "role": "primary",
+        "displayName": "Ink Blue Deep",
+        "canonical": "#1e3a8a",
+        "tonalRamp": [
+          "oklch(15% 0.05 266)",
+          "oklch(25% 0.075 266)",
+          "oklch(35% 0.1 266)",
+          "oklch(45% 0.125 266)",
+          "oklch(55% 0.15 266)",
+          "oklch(70% 0.112 266)",
+          "oklch(85% 0.075 266)",
+          "oklch(95% 0.05 266)"
+        ]
+      },
+      "on-accent": {
+        "role": "neutral",
+        "displayName": "On Accent",
+        "canonical": "#ffffff"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "oklch(15% 0.003 250)",
+          "oklch(25% 0.005 250)",
+          "oklch(35% 0.007 250)",
+          "oklch(45% 0.008 250)",
+          "oklch(55% 0.01 250)",
+          "oklch(70% 0.007 250)",
+          "oklch(85% 0.005 250)",
+          "oklch(95% 0.003 250)"
+        ]
+      },
+      "paper-subtle": {
+        "role": "neutral",
+        "displayName": "Paper Subtle",
+        "canonical": "#f6f7f9"
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e3e6ea"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#14171c",
+        "tonalRamp": [
+          "oklch(15% 0.005 260)",
+          "oklch(25% 0.007 260)",
+          "oklch(35% 0.01 260)",
+          "oklch(45% 0.013 260)",
+          "oklch(55% 0.015 260)",
+          "oklch(70% 0.011 260)",
+          "oklch(85% 0.007 260)",
+          "oklch(95% 0.005 260)"
+        ]
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#555d68",
+        "tonalRamp": [
+          "oklch(15% 0.007 255)",
+          "oklch(25% 0.01 255)",
+          "oklch(35% 0.013 255)",
+          "oklch(45% 0.017 255)",
+          "oklch(55% 0.02 255)",
+          "oklch(70% 0.015 255)",
+          "oklch(85% 0.01 255)",
+          "oklch(95% 0.007 255)"
+        ]
+      },
+      "selection-tint": {
+        "role": "neutral",
+        "displayName": "Selection Tint",
+        "canonical": "#dbe4fb"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero name and 404 heading."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings under a hairline rule."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Entry labels and entry headings."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The role line under the name."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "All prose, 62ch measure."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Tool lists, employer lines, footer, in Graphite."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Code figure and chart labels only."
+      }
+    },
+    "shadows": [{"name": "code-window", "value": "0 8px 24px -12px rgba(20, 23, 28, 0.14)"}],
+    "motion": [
+      {
+        "name": "state",
+        "value": "0.15s ease-out",
+        "purpose": "Button background on hover."
+      },
+      {
+        "name": "chart-draw",
+        "value": "2.2s total, ease-out cubic, 0.3s stagger per curve",
+        "purpose": "One-time draw-in of chart curves on first view; static under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "560px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action per group (LinkedIn).",
+      "html": "<a class=\"ds-btn\" href=\"#\">View my LinkedIn</a>",
+      "css": ".ds-btn{display:inline-block;padding:12px 20px;border-radius:6px;background:var(--accent,#1d4ed8);color:var(--on-accent,#fff);font:600 1.0625rem/1.65 system-ui,sans-serif;text-decoration:none;transition:background-color .15s ease-out}.ds-btn:hover{background:var(--accent-hover,#1e3a8a)}.ds-btn:focus-visible{outline:2px solid var(--accent,#1d4ed8);outline-offset:3px}"
+    },
+    {
+      "name": "Action Group",
+      "kind": "custom",
+      "description": "Primary button with a plain companion link.",
+      "html": "<p class=\"ds-actions\"><a class=\"ds-btn\" href=\"#\">View my LinkedIn</a><a class=\"ds-link\" href=\"#\">GitHub</a></p>",
+      "css": ".ds-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin:0;font:400 1.0625rem/1.65 system-ui,sans-serif}.ds-btn{display:inline-block;padding:12px 20px;border-radius:6px;background:#1d4ed8;color:#fff;font-weight:600;text-decoration:none;transition:background-color .15s ease-out}.ds-btn:hover{background:#1e3a8a}.ds-link{color:#1d4ed8;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}.ds-link:hover{color:#1e3a8a;text-decoration-thickness:2px}.ds-btn:focus-visible,.ds-link:focus-visible{outline:2px solid #1d4ed8;outline-offset:3px;border-radius:2px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Text-only row: name left, section links right.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-name\" href=\"#\">Massimo Montagna</a><span class=\"ds-nav-links\"><a href=\"#\">Skills</a><a href=\"#\">Project</a><a href=\"#\">Experience</a><a href=\"#\">Contact</a></span></nav>",
+      "css": ".ds-nav{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 32px;padding:28px 0;font:400 1.0625rem/1.65 system-ui,sans-serif}.ds-nav a{text-decoration:none;color:#14171c}.ds-nav-name{font-weight:650}.ds-nav-links{display:flex;flex-wrap:wrap;gap:4px 28px}.ds-nav-links a{color:#555d68}.ds-nav a:hover{color:#1d4ed8}.ds-nav a:focus-visible{outline:2px solid #1d4ed8;outline-offset:3px}"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "description": "Hairline rule above a 1.5rem heading.",
+      "html": "<h2 class=\"ds-h2\">Experience and education</h2>",
+      "css": ".ds-h2{margin:0;padding-top:24px;border-top:1px solid #e3e6ea;font:650 1.5rem/1.2 system-ui,sans-serif;letter-spacing:-.015em;color:#14171c}"
+    },
+    {
+      "name": "Entry",
+      "kind": "custom",
+      "description": "Label column plus text column used by every list.",
+      "html": "<div class=\"ds-entry\"><p class=\"ds-date\">Oct 2022 – present</p><div><h3>Lead Vehicle Dynamics Analyst</h3><p class=\"ds-meta\">A large automotive OEM · UK</p><p>Vehicle dynamics analysis for early-phase vehicle development.</p></div></div>",
+      "css": ".ds-entry{display:grid;grid-template-columns:220px minmax(0,62ch);gap:8px 48px;font:400 1.0625rem/1.65 system-ui,sans-serif;color:#14171c}.ds-entry p,.ds-entry h3{margin:0}.ds-entry div>*+*{margin-top:8px}.ds-entry h3{font-size:1.0625rem;font-weight:650;line-height:1.2}.ds-date{color:#555d68;font-variant-numeric:tabular-nums}.ds-meta{color:#555d68;font-size:.9375rem}"
+    },
+    {
+      "name": "Code Figure",
+      "kind": "custom",
+      "description": "Plain code figure under a hairline, no panel.",
+      "html": "<figure class=\"ds-fig\"><p class=\"ds-file\">yaw_rate_model.py</p><pre class=\"ds-code\"><code><b>def</b> <i class=\"f\">yaw_rate_gain</i>(v, L=<i class=\"n\">2.8</i>):\n    <i class=\"c\">\"\"\"Steady-state yaw rate.\"\"\"</i></code></pre><figcaption>Computed in your browser from the code above.</figcaption></figure>",
+      "css": ".ds-fig{margin:0;border-top:1px solid #e3e6ea;padding-top:16px;color:#14171c}.ds-file{margin:0;font:500 .8125rem/1 'JetBrains Mono',ui-monospace,monospace;color:#555d68}.ds-code{margin:16px 0 0;font:400 .8125rem/1.7 'JetBrains Mono',ui-monospace,monospace}.ds-code b{font-weight:600}.ds-code i{font-style:normal}.ds-code .f,.ds-code .n{color:#1d4ed8}.ds-code .c{color:#555d68}.ds-fig figcaption{margin-top:12px;font:400 .875rem/1.65 system-ui,sans-serif;color:#555d68}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer's Page",
+    "overview": "A white page with black ink and one blue pen. The site reads like a well-set technical document: generous margins, a single readable measure, hairline rules between sections, and the work itself (real code producing a real chart) as the only illustration. It is the category standard played straight, in the line of engineer personal sites and Stripe Press / Stripe docs.\n\nDensity is low and calm. Hierarchy comes from size, weight and grey, never from containers, colour fills or decoration. The system explicitly rejects the dark-navy neon dev-portfolio: glow cards, gradient text, eyebrows and section numbers.",
+    "keyCharacteristics": [
+      "White ground, near-black ink, grey secondary text, one blue accent.",
+      "Hairline rules instead of cards; no icons. The hero code window carries the only shadow.",
+      "System sans for prose, monospace only for code and chart labels.",
+      "A two-column label/text grid carries every list on the page."
+    ],
+    "rules": [
+      {
+        "name": "The One Pen Rule",
+        "body": "Blue means \"this is actionable or this is the data.\" Links, the primary action and the chart. Never a background, border, heading or decoration.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grey Is Secondary Rule",
+        "body": "Anything that supports rather than states (dates, meta, captions, comments) is Graphite; primary statements stay Ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Means Code Rule",
+        "body": "Monospace is for code, file names and chart labels only. Never for labels, nav, kickers or decoration.",
+        "section": "typography"
+      },
+      {
+        "name": "The Weight Not Size Rule",
+        "body": "Below the hero, hierarchy is weight (650 vs 400) and colour (Ink vs Graphite) at nearly one size; no intermediate heading sizes.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Separation is a 1px Hairline rule or space. No cards, no boxes, no fills, no shadows (the hero code window is the one owner-approved box).",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep blue to links, the one primary button and chart data.",
+      "Do separate sections with a 1px Hairline rule above a 1.5rem heading.",
+      "Do put any new list content into the label/text entry grid (220px + 62ch).",
+      "Do drive any new chart or diagram from the CSS custom properties so it matches the page.",
+      "Do keep text contrast at WCAG AA or better (Graphite on Paper is the floor for small text)."
+    ],
+    "donts": [
+      "Don't add cards, panels, shadows, glows or gradient text anywhere other than the hero code window.",
+      "Don't add eyebrows, kickers or section numbers above headings.",
+      "Don't add icons; links and buttons are words.",
+      "Don't use monospace outside code and chart labels.",
+      "Don't add a second accent colour or encode chart series by colour alone."
+    ]
+  }
+}
