@@ -2,7 +2,7 @@
 
 Personal portfolio site for Massimo Montagna, a mechanical engineer and software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
 
-A dark, blue-accented single-page site with an animated telemetry-style hero, a skills grid, a current-project card, an experience timeline and contact links. It has a light/dark theme toggle and is fully responsive.
+A light, minimal single page: a short intro beside a Python yaw-rate snippet and the live chart it produces, then skills, the current project, experience and contact. Fully responsive.
 
 ## Tech
 
@@ -21,8 +21,8 @@ Then open <http://localhost:8000>. Any static file server works.
 ```
 index.html              Home page (hero, skills, projects, experience, contact)
 css/styles.css          All styles; colours and fonts are CSS variables in :root
-js/main.js              Theme toggle, nav, scroll effects, hero canvas animation
-fonts/                  Self-hosted Space Grotesk and JetBrains Mono (woff2)
+js/main.js              Footer year and the hero yaw-rate chart
+fonts/                  Self-hosted JetBrains Mono (woff2), used for code only
 images/                 Favicons (images/favicon/) and the social preview image
 404.html                Not-found page
 sitemap.xml, robots.txt Search engine files
@@ -31,9 +31,9 @@ CNAME                   Custom domain for GitHub Pages
 
 ## Editing content
 
-- **Experience:** edit the `#experience` section of `index.html`. Copy a `timeline__item` block to add an entry.
-- **Projects:** edit the card in the `#projects` section of `index.html`. Projects link straight to their own sites; there are no case-study pages.
-- **Accent colour:** change `--accent`, `--accent-2` and `--accent-glow` in `css/styles.css`.
+- **Experience:** edit the `#experience` section of `index.html`. Copy an `entry` block to add one.
+- **Projects:** edit the `#project` section of `index.html`. Projects link straight to their own sites; there are no case-study pages.
+- **Accent colour:** change `--accent` and `--accent-hover` in `css/styles.css`.
 - **Social preview:** `images/og-image.png` is a 1200×630 image used by link previews. Regenerate it if the name or title changes.
 
 ## Deployment
@@ -42,6 +42,6 @@ Merging into `main` publishes the site. Development happens on feature branches 
 
 ## Credits
 
-Typefaces: [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/), both under the SIL Open Font License.
+Typeface: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for code, under the SIL Open Font License. Prose uses the system sans.
 
 &copy; Massimo Montagna. All rights reserved.
