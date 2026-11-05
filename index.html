@@ -66,7 +66,7 @@
 v = np.linspace(<span class="tn">0</span>, <span class="tn">50</span>, <span class="tn">100</span>)  <span class="tc"># speed, m/s</span>
 <span class="tk">for</span> k <span class="tk">in</span> (<span class="tn">0.003</span>, <span class="tn">0.005</span>, <span class="tn">0.008</span>):
     gain = yaw_rate_gain(v, k_us=k)</code></pre>
-				<div class="figure__plot"><canvas id="yaw-chart" role="img" aria-label="Chart of yaw rate gain against speed from 0 to 50 metres per second for understeer gradients 0.003, 0.005 and 0.008. Gain rises with speed, then levels off sooner the larger the gradient."></canvas></div>
+				<div class="figure__plot"><canvas id="yaw-chart" role="img" aria-label="Chart of yaw rate gain against speed from 0 to 50 metres per second for understeer gradients 0.003, 0.005 and 0.008. Gain rises with speed to a peak, then falls; larger gradients peak earlier and lower."></canvas></div>
 				</div>
 				<figcaption>Steady-state yaw rate gain against speed for three understeer gradients, computed in your browser from the code above.</figcaption>
 			</figure>

@@ -110,8 +110,7 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 /* Label column + text column, shared by skills, project and experience */
 .entries { margin-top: 32px; display: grid; gap: 40px; }
 .entry { display: grid; grid-template-columns: 220px minmax(0, var(--measure)); gap: 8px 48px; }
-.entry dt, .entry > h3 { font-size: 1.0625rem; font-weight: 650; letter-spacing: 0; }
-.entry h3 { font-size: 1.0625rem; letter-spacing: 0; }
+.entry dt, .entry h3 { font-size: 1.0625rem; font-weight: 650; letter-spacing: 0; }
 .entry dd > * + *, .entry > div > * + * { margin-top: 8px; }
 .entry__date { color: var(--text-dim); font-variant-numeric: tabular-nums; }
 .entry__meta { color: var(--text-dim); font-size: 0.9375rem; }
@@ -122,7 +121,6 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 /* Footer */
 .site-footer { display: flex; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 40px; background: linear-gradient(var(--rule), var(--rule)) center top / calc(100% - 2 * var(--gutter)) 1px no-repeat; color: var(--text-dim); font-size: 0.9375rem; }
 .site-footer a { color: var(--text-dim); }
-.site-footer > * { margin-top: 0; }
 
 /* 404 */
 .not-found { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
