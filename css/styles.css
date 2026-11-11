@@ -77,6 +77,7 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 	transition: background-color 0.15s ease-out;
 }
 .btn:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn--disabled, .btn--disabled:hover { background: var(--rule); color: var(--text-dim); cursor: default; }
 
 /* Code + chart figure */
 .window { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg); box-shadow: 0 8px 24px -12px rgba(20, 23, 28, 0.14); }
@@ -114,7 +115,6 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .entry dd > * + *, .entry > div > * + * { margin-top: 8px; }
 .entry__date { color: var(--text-dim); font-variant-numeric: tabular-nums; }
 .entry__meta { color: var(--text-dim); font-size: 0.9375rem; }
-.beyond { margin-top: 48px; margin-left: calc(220px + 48px); max-width: var(--measure); color: var(--text-dim); }
 .contact { margin-top: 32px; max-width: var(--measure); }
 .contact .hero__actions { margin-top: 24px; }
 
@@ -131,7 +131,6 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 @media (max-width: 900px) {
 	.hero { grid-template-columns: 1fr; gap: 56px; }
 	.entry { grid-template-columns: 1fr; }
-	.beyond { margin-left: 0; }
 }
 @media (max-width: 560px) {
 	.nav__links { gap: 4px 20px; }
