@@ -1,8 +1,8 @@
 # Massimo Montagna – Portfolio
 
-Personal portfolio site for Massimo Montagna, a mechanical engineer and software developer. Live at **[massmontagna.com](https://massmontagna.com)**.
+Personal portfolio site for Massimo Montagna, a mechanical engineer and data analyst. Live at **[massmontagna.com](https://massmontagna.com)**.
 
-A light, minimal single page: a short intro beside a Python yaw-rate snippet and the live chart it produces, then skills, the current project, experience and contact. Fully responsive.
+A light, minimal single page: a short intro beside a Python yaw-rate snippet and the live chart it produces, then skills, projects, experience and contact. Fully responsive.
 
 ## Tech
 

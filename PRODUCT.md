@@ -27,7 +27,7 @@ The owner sits between mechanical engineering and software: Lead Vehicle Dynamic
 
 ## Brand Commitments
 
-- Job title: "Mechanical Engineer / Software Developer" (hero, title, og/twitter tags, README, og-image together).
+- Job title: "Mechanical Engineer / Data Analyst" (hero, title, og/twitter tags, README, og-image together).
 - Current employer is never named: "a large automotive OEM" everywhere.
 - No phone, email, CV download, or profile photo. Contact is LinkedIn and GitHub only.
 - Experience stays a high-level overview; no detailed bullets.

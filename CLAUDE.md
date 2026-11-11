@@ -22,7 +22,7 @@ Work happens on feature branches (e.g. `portfolio-v2.1`); `main` is what is publ
 - Do not name the current employer. It is deliberately "a large automotive OEM" everywhere (page text, meta descriptions, JSON-LD, README).
 - Do not publish a phone number or email. Contact is LinkedIn and GitHub only. No CV download.
 - No profile photo. The hero is text plus the code/chart card; the "M" symbol (`images/favicon/favicon.svg`, blue M on a white tile with a hairline border) is the favicon only; the nav shows the name as text. `images/profile.jpg`, if still present, is unused.
-- The job-title wording is currently "Mechanical Engineer / Software Developer" ("aspiring" was removed). It appears in the hero, the `<title>`, `og:title`, `twitter:title`, the README and the social preview image, so change all of them together.
+- The job-title wording is currently "Mechanical Engineer / Data Analyst" ("aspiring" was removed). It appears in the hero, the `<title>`, `og:title`, `twitter:title`, the README and the social preview image, so change all of them together.
 - No eyebrows/badges, section numbers, cards, glows, gradients or icon tiles: the owner wants it clean and minimal. The "Currently building new projects" badge was removed in the redesign.
 
 ## Testing visually
