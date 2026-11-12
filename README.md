@@ -36,7 +36,7 @@ images/           Favicons and the social preview image
 ## Elsewhere
 
 - [Engineer's Notebook](https://engineersnotebook.net), my current project
-- [MOT Data Analysis](https://github.com/massmontagna/MOT-Data-Analysis)
+- [MOT Data Analysis](https://motanalysis.massmontagna.com)
 - [LinkedIn](https://linkedin.com/in/mcmontagna)
 
 ## License
