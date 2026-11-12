@@ -1,47 +1,44 @@
-# Massimo Montagna – Portfolio
+# massmontagna.com
 
-Personal portfolio site for Massimo Montagna, a mechanical engineer and data analyst. Live at **[massmontagna.com](https://massmontagna.com)**.
+Source for my personal site, live at **[massmontagna.com](https://massmontagna.com)**.
 
-A light, minimal single page: a short intro beside a Python yaw-rate snippet and the live chart it produces, then skills, projects, experience and contact. Fully responsive.
+I'm a mechanical engineer and data analyst. The site is a single page covering my skills, projects and experience. The hero shows a short Python snippet next to the chart it produces: yaw-rate gain against speed for understeering, neutral and oversteering cars, drawn in the browser on a canvas.
 
-## Tech
+## How it's built
 
-Hand-written HTML, CSS and vanilla JavaScript. There is no framework, build step or package manager, and no third-party requests (fonts are self-hosted). It is deployed with GitHub Pages straight from the `main` branch.
+- Plain HTML, CSS and vanilla JavaScript, with no framework, build step or dependencies
+- No third-party requests: the one web font (JetBrains Mono) is self-hosted
+- Works without JavaScript, apart from the chart
+- Responsive, respects `prefers-reduced-motion`, and meets WCAG AA contrast
+- Hosted on GitHub Pages with a custom domain
 
-## Run locally
+## Running it locally
 
 ```bash
+git clone https://github.com/massmontagna/massmontagna.github.io.git
+cd massmontagna.github.io
 python3 -m http.server
 ```
 
-Then open <http://localhost:8000>. Any static file server works.
+Then open <http://localhost:8000>.
 
-## Project structure
+## Layout
 
 ```
-index.html              Home page (hero, skills, projects, experience, contact)
-css/styles.css          All styles; colours and fonts are CSS variables in :root
-js/main.js              Footer year and the hero yaw-rate chart
-fonts/                  Self-hosted JetBrains Mono (woff2), used for code only
-images/                 Favicons (images/favicon/) and the social preview image
-404.html                Not-found page
-sitemap.xml, robots.txt Search engine files
-CNAME                   Custom domain for GitHub Pages
+index.html        The whole site
+css/styles.css    Styles (colours and fonts are CSS variables in :root)
+js/main.js        Hero chart and footer year
+fonts/            Self-hosted JetBrains Mono and its license (OFL.txt)
+images/           Favicons and the social preview image
+404.html          Not-found page
 ```
 
-## Editing content
+## Elsewhere
 
-- **Experience:** edit the `#experience` section of `index.html`. Copy an `entry` block to add one.
-- **Projects:** edit the `#project` section of `index.html`. Projects link straight to their own sites; there are no case-study pages.
-- **Accent colour:** change `--accent` and `--accent-hover` in `css/styles.css`.
-- **Social preview:** `images/og-image.png` is a 1200×630 image used by link previews. Regenerate it if the name or title changes.
+- [Engineer's Notebook](https://engineersnotebook.net), my current project
+- [MOT Data Analysis](https://github.com/massmontagna/MOT-Data-Analysis)
+- [LinkedIn](https://linkedin.com/in/mcmontagna)
 
-## Deployment
+## License
 
-Merging into `main` publishes the site. Development happens on feature branches such as `portfolio-v2`.
-
-## Credits
-
-Typeface: [JetBrains Mono](https://www.jetbrains.com/lp/mono/) for code, under the SIL Open Font License. Prose uses the system sans.
-
-&copy; Massimo Montagna. All rights reserved.
+&copy; Massimo Montagna. All rights reserved. [JetBrains Mono](https://www.jetbrains.com/lp/mono/) is used under the SIL Open Font License; see [fonts/OFL.txt](fonts/OFL.txt).
