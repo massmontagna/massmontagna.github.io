@@ -15,7 +15,24 @@
 	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 	--measure: 62ch;
 	--gutter: clamp(20px, 5vw, 48px);
-	color-scheme: light;
+	--selection: #dbe4fb;
+	--shadow: var(--shadow);
+	color-scheme: light dark;
+}
+/* Follows the OS setting; no toggle */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0f1115;
+		--bg-subtle: #171a20;
+		--rule: #2a2f37;
+		--text: #e6e8eb;
+		--text-dim: #9aa3ae;
+		--accent: #7aa2ff;
+		--accent-hover: #a8c1ff;
+		--on-accent: #0f1115;
+		--selection: #1e3a8a;
+		--shadow: rgba(0, 0, 0, 0.5);
+	}
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -29,7 +46,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
-::selection { background: #dbe4fb; color: var(--text); }
+::selection { background: var(--selection); color: var(--text); }
 h1, h2, h3, p, dl, dd, ol, ul, figure { margin: 0; }
 ol, ul { padding: 0; list-style: none; }
 h1, h2, h3 { font-weight: 650; letter-spacing: -0.015em; line-height: 1.2; text-wrap: balance; }
@@ -80,7 +97,7 @@ a:hover { color: var(--accent-hover); text-decoration-thickness: 2px; }
 .findings { padding-left: 1.25em; list-style: disc; }
 
 /* Code + chart figure */
-.window { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg); box-shadow: 0 8px 24px -12px rgba(20, 23, 28, 0.14); }
+.window { border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--bg); box-shadow: 0 8px 24px -12px var(--shadow); }
 .window__bar { position: relative; display: flex; align-items: center; justify-content: center; height: 36px; background: var(--bg-subtle); border-bottom: 1px solid var(--rule); }
 .window__dots { position: absolute; left: 14px; display: flex; gap: 7px; }
 .window__dots i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; }

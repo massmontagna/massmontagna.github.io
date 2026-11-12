@@ -71,6 +71,8 @@
 		}
 
 		size();
+		// Redraw with the new colours if the OS switches light/dark.
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { draw(done ? duration : 0); });
 		if (window.ResizeObserver) new ResizeObserver(function () { size(); draw(done ? duration : 0); }).observe(cv);
 		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
 			done = true; draw(duration); return;
