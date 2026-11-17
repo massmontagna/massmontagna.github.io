@@ -14,7 +14,7 @@ Work happens on feature branches (e.g. `portfolio-v2.1`); `main` is what is publ
 - `css/styles.css` holds everything. Colours and fonts are CSS variables in `:root`. Light and dark themes follow the OS via `prefers-color-scheme` (dark values in the `@media` block under `:root`; no toggle). Change the accent via `--accent` and `--accent-hover` in both blocks. Skills, project and experience share the `.entries` / `.entry` two-column layout (label column + text column, stacking below 900px).
 - `js/main.js` is one small IIFE: the footer year and `initYawChart`, which draws the hero chart's three curves in once when it first scrolls into view (static under reduced motion). The page works fully without JS apart from the chart.
 - The hero's right-hand `.figure` is a minimal macOS-style `.window` (owner request) holding a Python snippet plus a canvas chart, with the caption outside it. The chart computes the same formula as the snippet (yaw rate gain `v / (L + k_us * v**2)` for three `k_us` values), so if you change the code text, change `gain`, `curves` and `L` in `initYawChart` to match.
-- `#project` holds a single text entry for the current project (Engineer's Notebook, linking to `https://engineersnotebook.net`). There are no case-study pages or project images; projects link straight to their own sites.
+- `#project` holds one text entry per project: Engineer's Notebook (`https://engineersnotebook.net`), Bicycle Model (`https://bicyclemodel.massmontagna.com`) and MOT Test Data Analysis (`https://motanalysis.massmontagna.com`). There are no case-study pages or project images; projects link straight to their own sites.
 
 ## Content decisions (owner's preferences, keep these)
 

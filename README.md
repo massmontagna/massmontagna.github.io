@@ -36,6 +36,7 @@ images/           Favicons and the social preview image
 ## Elsewhere
 
 - [Engineer's Notebook](https://engineersnotebook.net), my current project
+- [Bicycle Model](https://bicyclemodel.massmontagna.com), an interactive 2DoF vehicle model
 - [MOT Data Analysis](https://motanalysis.massmontagna.com)
 - [LinkedIn](https://linkedin.com/in/mcmontagna)
 
